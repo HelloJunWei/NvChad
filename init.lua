@@ -19,3 +19,13 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+require('fzf-lua').setup({})
+
+vim.cmd([[
+  nnoremap <leader>bn :bnext<cr>
+  nnoremap <leader>bp :bprevious<cr>
+  nnoremap <leader>bd :bdelete<cr>
+]])
+
+vim.keymap.set("n", "<leader>p",
+  "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })

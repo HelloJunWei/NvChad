@@ -267,6 +267,18 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+  {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      -- calling `setup` is optional for customization
+      require("fzf-lua").setup({})
+    end
+  },
+  {
+    "junegunn/fzf", build = "./install --bin"
+  },
 }
 
 local config = require("core.utils").load_config()
